@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+        <html lang="en">
+            <head>
+                {% load static %}
+                {% block head %}
+                <meta charset="utf-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+                <meta name="description" content="" />
+                <meta name="author" content="" />
+                <title>Inicio</title>
+                <link rel="icon" type="image/x-icon" href="https://us.123rf.com/450wm/paramouse/paramouse1908/paramouse190800003/131999117-icono-de-8-bits-de-escritorio-de-computadora-port%C3%A1til-peque%C3%B1a-de-estilo-pixel-ilustraci%C3%B3n-vectorial-.jpg?ver=6" />
+                <link href={% static 'home/css/styles.css' %} rel="stylesheet" />
+                {% endblock head %}
+            </head>
+        <body>
+        {% block nav %}
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container px-lg-5">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href={% url 'index'%}>Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href={% url 'pages'%}>Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href={% url 'about'%}>About Us</a></li>
+                    </ul>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        {% if request.user.is_authenticated %}
+                            <li class="nav-item"><a class="nav-link" href={% url 'pageForm'%}>UpLoad Blog</a></li>
+                            <li class="nav-item"><a class="nav-link" href={% url 'editar'%}>Edit your Profile</a></li>
+                            <li class="nav-item"><a class="nav-link" href={% url 'ListaMensajes'%}>Messages</a></li>
+                            <li class="nav-item"><a class="nav-link" href={% url 'CrearMensajes'%}>Create a Message</a></li>
+                            <li class="nav-item"><a class="nav-link" href={% url 'logout'%}>Logout </a></li>
+                        {% else %}
+                            <li class="nav-item"><a class="nav-link" href={% url 'login'%}>Log In</a></li>
+                            <li class="nav-item"><a class="nav-link" href={% url 'register'%}>Log Out</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>  
+        {% endblock nav %}
+        {% block contenido %}
+        <header class="py-5">
+            <div class="container px-lg-5">
+                <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
+                    <div class="m-4 m-lg-5">
+                        <h1 class="display-5 fw-bold">
+                        {% if msj %}
+                        {{msj}}
+                        {% else %}
+                        Bienvenido al Blog de Santiago Humeniuk!
+                        {% endif %}
+                        </h1>
+                            <p class="fs-4">Esta es una pagina unica donde podes crear blogs, enviar mensajes, y hacer amigos mediante los posts realizados. Inicia sesion para desbloquear todas las funciones disponibles!!</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="pt-4">
+            <div class="container px-lg-5">
+                <div class="row gx-lg-5">
+                    <div class="col-lg-6 col-xxl-4 mb-5">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body">
+                                <h2 class="card-title">Blogs</h2>
+                                <p class="card-text">Ejmplo de los blogs! Clickea en Leer mas para ver los blogs disponibles.</p>
+                            </div>
+                            <div class="card-footer">
+                                <a href={% url 'pages'%} class="btn btn-primary">Leer más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% endblock contenido %}
+        {% block footer %}
+        <footer class="py-3 bg-dark">
+            <div>
+                <div class="container">
+                    <div class="row align-items-center justify-content-xl-between">
+                        <div class="col-xl-1">
+                            <div class="copyright text-center text-xl-left text-muted">
+                                <p>&copy;CoderHouse 2022</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-6">
+                            <ul class="nav nav-footer justify-content-center justify-content-xl-end">
+                                <li class="nav-item">
+                                    <a href="{% url 'about'%}" class="nav-link">About Us</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'pages'%}" class="nav-link">Blog</a></li>
+            </div>
+        </footer>
+        {% endblock footer %}
+        <script src="{% static 'home/js/scripts.js' %}"></script>
+    </body>
+</html>

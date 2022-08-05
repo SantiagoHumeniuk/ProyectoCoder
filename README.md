@@ -12,7 +12,8 @@ Instrucciones de Uso:
         2_Instalar las dependencias del proyecto: pip install -r requirements.txt.
         3_Crear las migraciones ejecutando python manage.py makemigrations y luego python manage.py migrate.
         4_Iniciar la aplicación con python manage.py runserver.
-        5_Una vez inicializada la aplicación, tendrás disponible para visitar la url de Inicio y navegar dentro de las distintas páginas disponibles 
+        5_Una vez inicializada la aplicación, tendrás disponible para visitar la url de Inicio y navegar 
+        dentro de las distintas páginas disponibles 
         actualmente.
 
 Para entrar a la aplicación, utilizar CTRL + CLICK IZQUIERDO

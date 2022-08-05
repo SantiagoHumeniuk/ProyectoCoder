@@ -7,6 +7,7 @@ Este es mi proyecto...
 Dejo un video mostrando la pagina para su maximo entendimiento.
 
 Instrucciones de Uso:
+        
         1_Clonar el proyecto.   
         2_Instalar las dependencias del proyecto: pip install -r requirements.txt.
         3_Crear las migraciones ejecutando python manage.py makemigrations y luego python manage.py migrate.
@@ -18,6 +19,5 @@ Para entrar a la aplicación, utilizar CTRL + CLICK IZQUIERDO
 Para detener la aplicación, utilizar CTRL+C.
 
 Video de Prueba:
-   1_Informacion completa de la pagina:   https://www.youtube.com/watch?v=BarEkh4Rth4
-
-   2_Informacion extra de la pagina:   https://youtu.be/VmNM537Mems
+                1_Informacion completa de la pagina:   https://www.youtube.com/watch?v=BarEkh4Rth4
+                                                 2_Informacion extra de la pagina:   https://youtu.be/VmNM537Mems
